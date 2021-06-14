@@ -170,7 +170,7 @@ def game():
             break
 
     if not db.get_conf()["MUSIC"]:
-        time.sleep(3)
+        time.sleep(5)
 
     print("\n"*10)
 
