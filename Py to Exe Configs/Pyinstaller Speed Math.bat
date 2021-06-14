@@ -1,0 +1,2 @@
+cd C:\Users\sroha\Documents\gitProjects\T2Python
+pyinstaller -F --clean -c -i "Icon\speedmath.ico" -n "Speed Math" --add-data "algebra.py;." --add-data "db.py;." --add-data "functions.py;." --add-data "geometry.py;." --add-data "login.py;." --add-data "music.py;." --add-data "numguess.py;." --add-data "setup.py;." --add-data "speedmath.py;." --add-data "C:\Users\sroha\AppData\Local\Programs\Python\Python38\Lib\site-packages\pyfiglet;pyfiglet" "main.py"

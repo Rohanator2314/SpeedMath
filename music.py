@@ -10,7 +10,7 @@ def music():
         # State Variables
         global game_state
         global done
-        state = ["Music\intro.mp3", "Music\mid.mp3", "Music\end.mp3"]
+        state = ["Music\\1.mp3", "Music\\2.mp3", "Music\\3.mp3"]
         timer = [6.81731, 10.182352, 22]
 
         # Stop if music disabled
@@ -18,15 +18,20 @@ def music():
             break
 
         # Play music on loop until end
-        while game_state != 2:
-            playsound.playsound(state[game_state], False)
-            time.sleep(timer[game_state])
-            if game_state == 0:
-                game_state = 1
+        try:
+            while game_state != 2:
+                playsound.playsound(state[game_state], False)
+                time.sleep(timer[game_state])
+                if game_state == 0:
+                    game_state = 1
+        except:
+            print("Cannot play music. Make sure music folder is in the same folder as this file")
+            time.sleep(5)
+            quit()
 
         # End and wait for start
-        playsound.playsound("end.mp3", False)
-        time.sleep(22)
+        playsound.playsound("Music\\3.mp3", False)
+        time.sleep(23)
         done = 1
         while game_state == 2:
             pass
