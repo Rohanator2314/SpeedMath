@@ -40,6 +40,9 @@ def get_login(user, password):
 
     if exists is False:
         print("Incorrect username or password")
+    else:
+        print("Success!")
+        time.sleep(1)
 
     return exists
 

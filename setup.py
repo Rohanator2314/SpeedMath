@@ -1,5 +1,5 @@
 # By Rohan Shirkhedkar
-import time
+import time, re
 from os import path
 
 config = {
@@ -32,7 +32,7 @@ def setup_conf():
 
     # Difficulty
     print("Firstly, difficulty. 1 is easy, 2 is normal, and 3 and above is hard")
-    diff = int(input("Which difficulty would you like to play on? \n") or 1)
+    diff = int(re.sub("[^1-4]", "", input("Which difficulty would you like to play on? \n")) or 1)
     print("\n")
 
     # Decimals

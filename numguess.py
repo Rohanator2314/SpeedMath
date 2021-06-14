@@ -27,7 +27,7 @@ def game():
 
             print("You got it " + name + "! The random number was " + str(randNum) + ". You had " + str(tries - (i + 1)) + " moves left")
             moves = i + 1
-            score = rang / moves
+            score = round((rang / moves), 2)
             print("Your score was: " + str(score) + "\n")
 
             if db.get_conf()["ONLINE"]:
