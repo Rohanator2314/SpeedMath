@@ -23,7 +23,7 @@ def get_conf():
 def db_connect():
     # Print text on initiate
     # print("Connecting to database, credentials are: \n")
-    
+
     # get config data
     config = get_conf()
 
@@ -42,7 +42,8 @@ def db_connect():
         connection = db_connection
         return db_connection
     except:
-        print("\nConnection Error")
+        print("\nConnection Error, if no internet is availible, turn online mode off")
+        time.sleep(10)
         quit()
 
 

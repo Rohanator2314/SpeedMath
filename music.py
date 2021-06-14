@@ -10,7 +10,7 @@ def music():
         # State Variables
         global game_state
         global done
-        state = ["intro.mp3", "mid.mp3", "end.mp3"]
+        state = ["Music\intro.mp3", "Music\mid.mp3", "Music\end.mp3"]
         timer = [6.81731, 10.182352, 22]
 
         # Stop if music disabled

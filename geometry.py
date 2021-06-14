@@ -117,6 +117,10 @@ def game():
     while True:
         if music.done:
             break
+
+    if not db.get_conf()["MUSIC"]:
+        time.sleep(3)
+
     print("\n" * 10)
 
 

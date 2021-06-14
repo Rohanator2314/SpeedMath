@@ -66,7 +66,7 @@ time.sleep(1.89)
 functions.clear()
 
 print(fig.renderText("A Nudgee College Production"))
-time.sleep(2.4)
+time.sleep(2.53)
 functions.clear()
 
 print("\033[1;34;40m")

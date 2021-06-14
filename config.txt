@@ -1,1 +1,0 @@
-{'USER': 'D8kTAjzQVZ', 'HOST': 'remotemysql.com', 'DATABASE': 'D8kTAjzQVZ', 'PASSWORD': 'cfK7uHSzjh', 'DIFFICULTY': 3, 'DECIMALS': False, 'ONLINE': True, 'MUSIC': True}

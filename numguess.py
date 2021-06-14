@@ -37,6 +37,9 @@ def game():
                 if music.done:
                     break
 
+            if not db.get_conf()["MUSIC"]:
+                time.sleep(3)
+
             break
         elif i != tries - 1:
             if guess > randNum:
@@ -48,6 +51,9 @@ def game():
             while True:
                 if music.done:
                     break
+
+            if not db.get_conf()["MUSIC"]:
+                time.sleep(3)
 
 
 def numguess():
