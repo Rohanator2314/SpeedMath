@@ -11,6 +11,7 @@ config = {
     "DECIMALS": False,
     "ONLINE": True,
     "MUSIC": True,
+    "SS": True,
 }
 
 
@@ -46,6 +47,11 @@ def setup_conf():
 
     # Music
     music_setting = (input("Would you like to play with music? [yes:no] \n") or "yes")
+    print("\n")
+
+    # Start Sequence
+    SS_setting = (input("Would you like to play the intro sequence (with music) when you play the game? [yes:no] \n") or "yes")
+    print("\n")
 
     # Enact changes
     if diff:
@@ -59,6 +65,9 @@ def setup_conf():
 
     if music_setting[0].lower() == "n":
         config["MUSIC"] = False
+
+    if SS_setting[0].lower() == "n":
+        config["SS"] = False
 
     write_conf()
 

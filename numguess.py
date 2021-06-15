@@ -33,6 +33,7 @@ def game():
             print("Your score was: " + str(score) + "\n")
 
             if db.get_conf()["ONLINE"]:
+                print("Showing you your leaderboard status now...")
                 lb(name, score)
 
             while True:

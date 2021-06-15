@@ -157,12 +157,11 @@ def game():
     # Change to ending music
     music.game_state = 2
 
-    print("Showing you your leaderboard status now...")
-
     mark = 0
 
     # Send to leaderboard
     if db.get_conf()["ONLINE"] is True and db.get_conf()["DECIMALS"] is False:
+        print("Showing you your leaderboard status now...")
         lb(name, score)
 
     while True:

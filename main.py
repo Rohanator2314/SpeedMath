@@ -4,6 +4,7 @@ from pyfiglet import Figlet
 from colorama import init
 init()
 
+
 def game_picker():
     print("\033[1;32;40m")
     choice = int(re.sub("[^1-4]", "", input("What game would you like to play? \n1. Speed Math Basic\n2. Algebra X\n3. Geometry Galore\n4. Guess the number\nEnter number: ")) or 4)
@@ -18,6 +19,51 @@ def game_picker():
     else:
         print("Invalid Input")
 
+
+def start_sequence():
+    music.start()
+
+    fig = Figlet(font="small")
+    print("\033[1;36;40m")
+    functions.clear()
+
+    print(fig.renderText("Rohanator games Presents"))
+    time.sleep(1.89)
+    functions.clear()
+
+    print(fig.renderText("A Nudgee College Production"))
+    time.sleep(2.53)
+    functions.clear()
+
+    print("\033[1;34;40m")
+    fig = Figlet(font="speed")
+    print(fig.renderText("Speed Math"))
+    time.sleep(0.47)
+    functions.clear()
+
+    print("\033[1;35;40m")
+    fig = Figlet(font="cricket")
+    print(fig.renderText("Algebra X"))
+    time.sleep(0.47)
+    functions.clear()
+
+    print("\033[1;31;40m")
+    fig = Figlet(font="larry3d")
+    print(fig.renderText("Geometry Galore"))
+    time.sleep(0.47)
+    functions.clear()
+
+    print("\033[1;32;40m")
+    fig = Figlet(font="chunky")
+    print(fig.renderText("Guess the Number!!"))
+    time.sleep(0.47)
+    functions.clear()
+
+    print("\033[1;33;40m")
+    fig = Figlet(font="digital")
+    print(fig.renderText("Comming Soon"))
+    time.sleep(0.47)
+    functions.clear()
 
 # Prerequisites
 conf_check = setup.check_config()
@@ -54,52 +100,11 @@ if db.get_conf()["ONLINE"]:
 
         functions.clear()
 
-music.start()
-
 # Start Sequence
-fig = Figlet(font="small")
-print("\033[1;36;40m")
-functions.clear()
-
-print(fig.renderText("Rohanator games Presents"))
-time.sleep(1.89)
-functions.clear()
-
-print(fig.renderText("A Nudgee College Production"))
-time.sleep(2.53)
-functions.clear()
-
-print("\033[1;34;40m")
-fig = Figlet(font="speed")
-print(fig.renderText("Speed Math"))
-time.sleep(0.47)
-functions.clear()
-
-print("\033[1;35;40m")
-fig = Figlet(font="cricket")
-print(fig.renderText("Algebra X"))
-time.sleep(0.47)
-functions.clear()
-
-print("\033[1;31;40m")
-fig = Figlet(font="larry3d")
-print(fig.renderText("Geometry Galore"))
-time.sleep(0.47)
-functions.clear()
-
-print("\033[1;32;40m")
-fig = Figlet(font="chunky")
-print(fig.renderText("Guess the Number!!"))
-time.sleep(0.47)
-functions.clear()
-
-music.game_state = 1
-print("\033[1;33;40m")
-fig = Figlet(font="digital")
-print(fig.renderText("Comming Soon"))
-time.sleep(0.47)
-functions.clear()
-
+if db.get_conf()["SS"]:
+    start_sequence()
+else:
+    music.start()
 
 print("\033[1;36;40m")
 fig = Figlet(font="small")
@@ -118,9 +123,9 @@ game_picker()
 
 # Prevent Instant Close
 while True:
-    functions.clear()
     print("\033[1;31;40m")
     e = (input("Do you want to exit? (type 's' for setup)\n") or "yes")
+    functions.clear()
 
     if e[0].lower() in ["y", "q"]:
         music.kill()

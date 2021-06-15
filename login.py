@@ -23,7 +23,6 @@ def check_exists(user, password):
         time.sleep(0.5)
     except:
         print("Invalid Username or Password")
-        time.sleep(2)
 
     data = "error"  # initially just assign the value
 
@@ -48,6 +47,7 @@ def get_login(user, password):
 
     if exists is False:
         print("Incorrect username or password")
+        time.sleep(2)
     else:
         print("Success!")
         time.sleep(1)
