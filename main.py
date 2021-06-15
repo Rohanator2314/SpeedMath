@@ -113,13 +113,13 @@ time.sleep(2)
 
 
 # Begin Game
-# try:
-game_picker()
-# except:
-#     print("\033[1;31;40m")
-#     print("Error, resetting...")
-#     time.sleep(1)
-#     functions.clear()
+try:
+    game_picker()
+except:
+    print("\033[1;31;40m")
+    print("Error, resetting...")
+    time.sleep(1)
+    functions.clear()
 
 # Prevent Instant Close
 while True:
@@ -133,13 +133,13 @@ while True:
     elif e[0].lower() == "s":
         setup.setup_conf()
     else:
-        # try:
-        music.kill()
-        time.sleep(0.2)
-        music.start()
-        game_picker()
-        # except:
-        #     print("\033[1;31;40m")
-        #     print("Error, resetting...")
-        #     time.sleep(1)
-        #     functions.clear()
+        try:
+            music.kill()
+            time.sleep(0.2)
+            music.start()
+            game_picker()
+        except:
+            print("\033[1;31;40m")
+            print("Error, resetting...")
+            time.sleep(1)
+            functions.clear()
