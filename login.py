@@ -21,9 +21,9 @@ def check_exists(user, password):
     try:
         cursor.execute(get_exists.format(user=user, password=password))
         time.sleep(0.5)
-    except mysql.connector.errors.ProgrammingError:
+    except:
         print("Invalid Username or Password")
-        time.sleep(1)
+        time.sleep(2)
 
     data = "error"  # initially just assign the value
 
@@ -37,7 +37,14 @@ def check_exists(user, password):
 
 
 def get_login(user, password):
-    exists = check_exists(user, password)
+    try:
+        exists = check_exists(user, password)
+    except:
+        print("Lost connection, getting it back...")
+
+        global connection
+        connection = db.db_connect()
+        exists = check_exists(user, password)
 
     if exists is False:
         print("Incorrect username or password")
@@ -74,7 +81,7 @@ def register():
 
             return get_login(user,password)
 
-        except mysql.connector.errors.ProgrammingError:
+        except:
             print("Invalid Username or Password")
 
     elif password != password2:

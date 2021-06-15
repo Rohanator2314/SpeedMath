@@ -55,7 +55,8 @@ def give_connect():
 def add_db(leaderboard_data, leaderboard_type):
     try:
         add_db_entry(leaderboard_data, leaderboard_type)
-    except mysql.connector.errors.OperationalError:
+    except:
+        print("Lost connection, getting it back...")
         db_connect()
         add_db_entry(leaderboard_data, leaderboard_type)
 
