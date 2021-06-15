@@ -23,6 +23,7 @@ def check_exists(user, password):
         time.sleep(0.5)
     except mysql.connector.errors.ProgrammingError:
         print("Invalid Username or Password")
+        time.sleep(1)
 
     data = "error"  # initially just assign the value
 
@@ -68,6 +69,10 @@ def register():
             cnx.commit()
 
             print("Success!")
+
+            time.sleep(1)
+
+            return get_login(user,password)
 
         except mysql.connector.errors.ProgrammingError:
             print("Invalid Username or Password")

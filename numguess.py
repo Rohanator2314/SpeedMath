@@ -1,4 +1,4 @@
-import db, random, time, music, functions
+import db, random, time, music, functions, re
 from pyfiglet import Figlet
 
 
@@ -11,10 +11,12 @@ def lb(name, score):
 def game():
     # Get User Data
     print("\033[1;36;40m")
-    name = functions.try_hard_check(input("What is your name? \n").title() or "Generic User")
+    name = functions.get_name()
+
     print("\033[1;31;40m")
     rang = int(input("What range of numbers do you want there to be? Between 1 and: \n"))
     tries = int(input("Ive made a random number, how many tries do you think it will take you to figure out the number? \n"))
+
     randNum = random.randint(1, rang)
 
     # Start Guessing
@@ -43,11 +45,15 @@ def game():
             break
         elif i != tries - 1:
             if guess > randNum:
-                guess = int(input("Too high! Guess again. You have " + str(tries - (i + 1)) + " moves left\n\n"))
+                guess = int(re.sub("[^0-9e]", "", input("Too high! Guess again. You have " + str(tries - (i + 1)) + " moves left\n\n")) or 0 )
             else:
-                guess = int(input("Too low! Guess again. You have " + str(tries - (i + 1)) + " moves left\n\n"))
+                guess = int(re.sub("[^0-9e]", "", input("Too low! Guess again. You have " + str(tries - (i + 1)) + " moves left\n\n")) or 0 )
         else:
+
+            music.game_state = 2
+
             print("You LOSE!!!! Mwahahahahaa! The random number was " + str(randNum))
+
             while True:
                 if music.done:
                     break

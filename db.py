@@ -53,6 +53,14 @@ def give_connect():
 
 
 def add_db(leaderboard_data, leaderboard_type):
+    try:
+        add_db_entry(leaderboard_data, leaderboard_type)
+    except mysql.connector.errors.OperationalError:
+        db_connect()
+        add_db_entry(leaderboard_data, leaderboard_type)
+
+
+def add_db_entry(leaderboard_data, leaderboard_type):
     # Get cursor
     global connection, name
     cnx = connection

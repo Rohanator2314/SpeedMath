@@ -82,7 +82,7 @@ def game():
     print("\033[1;34;40m")
 
     # Get Name
-    name = functions.try_hard_check(input("What is your name? \n").title() or "Generic User")
+    name = functions.get_name()
 
     # Start question sequence
     turtle = Turtle()

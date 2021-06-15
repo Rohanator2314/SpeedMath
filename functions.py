@@ -4,6 +4,17 @@ from shutil import get_terminal_size
 from threading import Thread
 from time import sleep
 
+name = ""
+
+
+def get_name():
+    global name
+
+    if not name:
+        name = try_hard_check(input("What is your name? \n").title() or "Generic User")
+    
+    return name
+
 
 def mark(score, mark):
     # Determine and give mark
@@ -79,5 +90,3 @@ class Loader:
     def __exit__(self, exc_type, exc_value, tb):
         # handle exceptions with those variables ^
         self.stop()
-
-

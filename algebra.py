@@ -129,7 +129,7 @@ def question(i):
 
 def game():
     print("\033[1;33;40m")
-    name = functions.try_hard_check(input("What is your name? \n").title() or "Generic User")
+    name = functions.get_name()
 
     global mark
 
