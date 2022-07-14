@@ -21,12 +21,11 @@ jobs:
     - name: Install dependencies
       run: |
         conda env update --file environment.yml --name base
-        conda install mysql-connector-python
-        conda install figlet
-        conda install pyfiglet
-        conda install colorama
-        conda install playsound
-        conda install stdiomask
+        conda install -c conda-forge mysql-connector-python
+        conda install -c conda-forge figlet
+        conda install -c conda-forge pyfiglet
+        conda install -c conda-forge colorama
+        conda install -c conda-forge stdiomask
     - name: Lint with flake8
       run: |
         conda install flake8
